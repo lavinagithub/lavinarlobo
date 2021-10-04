@@ -75,3 +75,25 @@ prevBtn.addEventListener("click", function () {
   }
   showPerson(currentItem);
 });
+
+//Get the button
+var topBtn = document.querySelector("#topBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    topBtn.style.display = "block";
+  } else {
+    topBtn.style.display = "none";
+  }
+}
+const topFunction = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
+topBtn.addEventListener("click", topFunction);
+
